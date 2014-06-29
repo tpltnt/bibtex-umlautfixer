@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import sys
 
 # sorry, I'm too lazy to write more graceful
@@ -21,10 +22,11 @@ with open(sys.argv[1], 'r') as bibtexfile:
                 ignore = False
             # replacement action
             if not ignore:
-                line = line.replace('ä', '{\"a}')
-                line = line.replace('ö', '{\"o}')
-                line = line.replace('ü', '{\"u}')
-                line = line.replace('ß', '{\ss}')
-                line = line.replace('é', '{\'e}')
+                line = line.replace('ä', '{\\"a}')
+                line = line.replace('ö', '{\\"o}')
+                line = line.replace('ü', '{\\"u}')
+                line = line.replace('ß', "{\\ss}")
+                line = line.replace('é', "{\\'e}")
             newfile.write(line)
 
+os.replace("tmp.bibtex", sys.argv[1])
