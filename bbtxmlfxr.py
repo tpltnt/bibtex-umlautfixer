@@ -20,6 +20,10 @@ with open(sys.argv[1], 'r') as bibtexfile:
                 ignore = True
             if '}' in line:
                 ignore = False
+            # don't touch ref ids
+            if '@' = line[0] and '{' in line:
+                newfile.write(line)
+                continue
             # replacement action
             if not ignore:
                 line = line.replace('ä', '{\\"a}')
