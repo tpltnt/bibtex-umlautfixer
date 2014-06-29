@@ -37,6 +37,7 @@ with open(sys.argv[1], 'r') as bibtexfile:
                 line = line.replace('í', "{\\'i}")
                 line = line.replace('ó', "{\\'o}")
                 line = line.replace('ú', "{\\'u}")
+                line = line.replace('–', '--')
             newfile.write(line)
 
 os.replace("tmp.bibtex", sys.argv[1])
