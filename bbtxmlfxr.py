@@ -31,7 +31,12 @@ with open(sys.argv[1], 'r') as bibtexfile:
                 line = line.replace('ü', '{\\"u}')
                 line = line.replace('ß', "{\\ss}")
                 line = line.replace('ẞ', "{\\ss}")
+                line = line.replace('á', "{\\'a}") 
                 line = line.replace('é', "{\\'e}")
+                line = line.replace('é', "{\\'e}")
+                line = line.replace('í', "{\\'i}")
+                line = line.replace('ó', "{\\'o}")
+                line = line.replace('ú', "{\\'u}")
             newfile.write(line)
 
 os.replace("tmp.bibtex", sys.argv[1])
