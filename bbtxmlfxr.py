@@ -26,6 +26,7 @@ with open(sys.argv[1], 'r') as bibtexfile:
                 line = line.replace('ö', '{\\"o}')
                 line = line.replace('ü', '{\\"u}')
                 line = line.replace('ß', "{\\ss}")
+                line = line.replace('ẞ', "{\\ss}")
                 line = line.replace('é', "{\\'e}")
             newfile.write(line)
 
