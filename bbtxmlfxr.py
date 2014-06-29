@@ -21,7 +21,7 @@ with open(sys.argv[1], 'r') as bibtexfile:
             if '}' in line:
                 ignore = False
             # don't touch ref ids
-            if '@' = line[0] and '{' in line:
+            if '@' == line[0] and '{' in line:
                 newfile.write(line)
                 continue
             # replacement action
